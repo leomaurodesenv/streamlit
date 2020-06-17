@@ -12,12 +12,18 @@ data = pd.DataFrame(
 	np.random.randn(20, 3),
 	columns=['a', 'b', 'c'])
 
+st.write('### var experiments')
+x = st.slider('x')
+st.write(x, 'squared is', x * x)
+
+select = st.selectbox('Filter to:', ['car', 'truck'])
+st.write('selected:', select)
+
 #progress_bar = st.sidebar.progress(100)
 #status_text = st.sidebar.empty()
 
 st.write('### st.line_chart')
-size = st.slider('width', 0, 100, 17)
-chart = st.line_chart(data=data, width=size)
+chart = st.line_chart(data=data)
 
 st.write('### st.write')
 st.write(np.transpose(data))
